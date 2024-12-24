@@ -1,0 +1,11 @@
+# Site navigation links
+
+- title: "BUAA"
+  url: /BUAA
+  excerpt: "the courses in BUAA SA"
+  image:
+
+- title: "考研"
+  url: /kaoyan
+  excerpt: "the courses in BUAA SA"
+  image:
