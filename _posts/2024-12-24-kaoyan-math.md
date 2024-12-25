@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: "考研数学一"
 tags: "考研"
 category: kaoyan

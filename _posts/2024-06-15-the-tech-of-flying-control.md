@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: "飞行器控制技术"
 tags: "BUAA课内"
 category: BUAA_course

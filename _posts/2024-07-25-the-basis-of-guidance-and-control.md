@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: 制导与控制基础
 tags: "BUAA课内"
 category: BUAA_course

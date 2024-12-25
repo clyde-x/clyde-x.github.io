@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: "航天器控制原理"
 tags: "BUAA课内"
 category: BUAA_course
