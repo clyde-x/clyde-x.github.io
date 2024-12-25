@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /BUAA/
-title: "BUAA_course_"
+title: "BUAA_course"
 ---
 
 <div class="tiles">
