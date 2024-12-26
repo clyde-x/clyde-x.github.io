@@ -32,7 +32,7 @@ $$
 $$
 单调有界数列必有极限。步骤：做差/商证单调，数学归纳法证有界，令极限为A，解方程。
 
-压缩映射的核心是构建$|x_{n+1}-A|\leq k^n|x_1-a|$的关系，通常使用导数或者拉格朗日中值定理
+压缩映射的核心是构建$ \vert x_{n+1}-A\vert \leq k^n\vert x_1-a\vert $的关系，通常使用导数或者拉格朗日中值定理
 
 几个常用的极限：
 
@@ -45,7 +45,7 @@ $$
 
 ## 连续
 
-函数在某点连续：在这个点的极限等于他的值。$\lim\limits_{x\to{x_0}}f(x)=f(x_0)$
+函数在某点连续：在这个点的极限等于他的值。$\lim\limits_{x\to{x_0} }f(x)=f(x_0)$
 
 间断点：要求在$x_0$的去心邻域内有定义，但在$x_0$不连续。所以0不是$\ln x$的间断点。
 
@@ -64,7 +64,7 @@ $$
 - 介值定理：$\exists \xi\in(a,b),f(\xi)=C.\quad C\in[A,B]\subseteq[min,max] $
 - 零点存在定理。注意是$f(a)f(b)<0$，当不严格小于0时，还要讨论等于0的情况。
 
-# 导数，微分
+# 一元导数，微分
 
 ## 定义
 
@@ -77,11 +77,11 @@ $$
 ## 导数计算
 
 常用导数：
+
 $$
 \begin{aligned}
-(\arcsin x)'&=\frac1{\sqrt{1-x^2}}&(\arccos x)'&=-\frac1{\sqrt{1-x^2}}\\
-(\arctan x)'&=\frac1{1+x^2}&({\rm arccot} x)'&=-\frac1{1+x^2}
-
+(\arcsin x)'&=\frac1{\sqrt{1-x^2} }&(\arccos x)'&=-\frac1{\sqrt{1-x^2} }\\
+(\arctan x)'&=\frac1{1+x^2}&({\rm arccot} x)'&=-\frac1{1+x^2}\\
 \end{aligned}
 $$
 
@@ -104,40 +104,71 @@ e^x&=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}\dots\\
 \frac1{1-x}&=1+x+x^2+x^3+\dots\\
 \frac1{1+x}&=1-x+x^2-x^3+\dots\\
 \tan x&=x+\frac13x^3+\frac2{15}x^5+\dots\\
-\arctan x&=x-\frac{x^3}3+\frac{x^5}5+\dots+\frac{(-1)^nx^{2n+1}}{2n+1}\\
+\arctan x&=x-\frac{x^3}3+\frac{x^5}5+\dots+\frac{(-1)^nx^{2n+1} }{2n+1}\\
 \arcsin x&=x+\frac12\frac13x^3+\frac{1\times3}{2\times4}\frac15x^5+\dots=x+\frac{x^3} 6+\dots\\
 \end{aligned}
 $$
+泰勒展开解微分证明大题时，要注意展到几阶，在哪个点展开，对谁展开，余项的形式等问题
 
 ## 花里胡哨的求导
 
-参数方程求导
+公式可能会看着很简单，但是记住不一定简单。还有但是，题做多了自然而然就会了
 
-隐函数求导
+参数方程求导：$x=\varphi(t),y=\psi(t)$，则$\frac{ {\rm d}y}{ {\rm d}x}=\frac{ {\rm d}y}{ {\rm d}t}/\frac{ {\rm d}x}{ {\rm d}t}=\frac{\psi'(t)}{\varphi'(t)},\frac{ {\rm d}^2y}{ {\rm d}t^2}=\frac{ {\rm d} }{ {\rm d}t}\left(\frac{ {\rm d}y}{ {\rm d}x}\right)/\frac{ {\rm d}x}{ {\rm d}t}=\frac{ {\rm d} }{ {\rm d}t}\left(\frac{\psi'(t)}{\varphi'(t)}\right)\frac{1}{\varphi'(t)}$
 
-反函数求导
+隐函数求导：$F(x,y)=0$将$y$视作$x$的函数，两边分别对$x$求导，得到含$y'$的方程，解方程。或者，$\frac{ {\rm d}y}{ {\rm d}x}=-\frac{F_x'}{F_y'}$
 
-对数求导
+反函数求导：$\frac{ {\rm d}y}{ {\rm d}x}=1/\frac{ {\rm d}x}{ {\rm d}y}$，互为反函数的导数互为倒数。
 
-高阶导
+对数求导：多个因式乘除、根幂构成，两边同时取对数，之后再求导。常用于似然函数、复杂函数在某点的导数
 
-一阶微分形式不变性
+高阶导：莱布尼茨$[u(x)v(x)]^{(n)}=\sum_{i=0}^{n}C_n^iu^{(n-i)}(x)v^{(i)}(x)$；$u,v$要么有高阶导的通项表达式($\ln x,\frac1{a+x}$)，要么求导后在这个点处为0（幂函数，代入为0）。计算高阶导还可以将函数拆分成多个能写出泰勒展开的多项式，通过泰特展开的唯一性得到高阶导的数值。
+
+一阶微分形式不变性：复合函数的微分=外层函数微分x内层函数微分。
 
 ## 中值定理
 
-罗尔：
+罗尔：$[a,b]连续，(a,b)可导，f(a)=f(b),\exists\xi\in(a,b),f'(\xi)=0$
 
-拉格朗日：
+拉格朗日：$[a,b]连续，(a,b)可导，f(a)=f(b),\exists\xi\in(a,b),\frac{f(a)-f(b)}{a-b}=f'(\xi)$
 
-柯西：
+柯西：$[a,b]连续，(a,b)可导，f(a)=f(b),g'(x)\neq0,\exists\xi\in(a,b),\frac{f(a)-f(b)}{g(a)-g(b)}=\frac{f'(\xi)}{g'(\xi)}$
+
+零点个数：$f(x)$有$k$个零点，则$f'(x)$至少有$k-1$个零点；$f'(x)$有k个零点，则$f(x)$至多有$k+1$个零点。
 
 ## 应用
 
-极值点和拐点以及凹凸性
+- 极值：
 
-渐近线
+必要条件：设$f(x)$在 $x=x_0$ 处可导,且在点 $x_0$ 处取得极值,则必有 $f'(x_0)=0$ .	
 
-弧微分和曲率
+第一充分条件：设$ f(x)$ 在$x=x_0$处连续，且在$x_0$的某去心邻域$U(x_0,\delta)$ 内可导，左邻域和右邻域内，$f'(x)$符号不同，则极值存在。
+
+第二充分条件：设$f(x)$在$x=x_0$处二阶可导,且$f'(x_0)=0,f''(x_0)\neq0$，若$f''(x_0)<0$,则$f(x)$在$x=x_0$处取得极大值
+
+第三充分条件：设$f(x)$在$x_0$处$n$阶可导，且$f^{(m)}(x_0)=0,(m=1,2,\dots,n−1),f^{(n)}(x_0)\neq0(n\geq2)$ 且$n$为偶数，则极值存在。（区分极值点和拐点）
+
+- 拐点与凹凸性：
+
+同极值点。
+
+$\forall x_1,x_2\in I$，凹：$f\left(\frac{x_1+x_2}{2}\right)<\frac{f(x_1)+f(x_2)}{2}$；凸$f\left(\frac{x_1+x_2}{2}\right)>\frac{f(x_1)+f(x_2)}{2}$
+
+<img src="{{site.url}}/images/kaoyanmath/concavity.svg" alt="concavity" style="zoom:50%;" />
+
+- 渐近线，考虑正负无穷
+
+水平：$\lim\limits_{x\to\infty}f(x)=A$
+
+垂直：$\lim\limits_{x\to x_0}f(x)=\infty$
+
+斜：$\lim\limits_{x\to\infty}\frac{f(x)}{x}=a,\lim\limits_{x\to\infty}f(x)-ax=b$，则渐近线：$y=ax+b$
+
+- 弧微分和曲率
+
+弧微分${\rm d}s=\sqrt{1+y'^2}{\rm d}x$，曲率$k=\frac{\vert y''\vert }{(1+y'^2)^{3/2} }$，曲率半径$\rho=\frac1k$
+
+曲率圆实际上是用圆去拟合函数，而切线就是用直线去拟合函数。都跟泰勒展开有点点关系。
 
 
 
