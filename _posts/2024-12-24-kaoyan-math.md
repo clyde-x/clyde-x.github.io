@@ -184,3 +184,4 @@ $\forall x_1,x_2\in I$，凹：$f\left(\frac{x_1+x_2}{2}\right)<\frac{f(x_1)+f(x
   - Cauchy-Schwarz不等式: $(a_1b_1+a_2b_2)^2\leq(a_1^2+a_2^2)(b_1^2+b_2^2);\left[\int_a^bf(x)g(x){\mathrm d}x\right]^2\leq\int_a^bf^2(x){\mathrm d}x\int_a^bg^2(x){\mathrm d}x$
   - $\vert \int_a^bf(x){\mathrm d}x\vert\leq\int_a^b\vert f(x)\vert{\mathrm d}x$
 
+# 一元积分学
