@@ -136,7 +136,7 @@ $$
 
 零点个数：$f(x)$有$k$个零点，则$f'(x)$至少有$k-1$个零点；$f'(x)$有k个零点，则$f(x)$至多有$k+1$个零点。
 
-## 应用
+## 应用以及一些其他的
 
 - 极值：
 
@@ -170,5 +170,17 @@ $\forall x_1,x_2\in I$，凹：$f\left(\frac{x_1+x_2}{2}\right)<\frac{f(x_1)+f(x
 
 曲率圆实际上是用圆去拟合函数，而切线就是用直线去拟合函数。都跟泰勒展开有点点关系。
 
+- 但我们有条件$f''(x)>0$时，我们能想到那些东西？
 
+  a $f(x),f'(x)$相关性质；b 拉格朗日余项缩放；c 凹凸性不等式；d $\int_a^bf(x){\mathrm d}x<\frac{f(a)+f(b)}2(b-a)$
+
+- 对称性：关于点中心对称；关于直线对称；完全对称（多元函数任意两字母交换之后仍与原函数相同）；轮换对称。
+
+- 常用的不等式
+
+  - $ \vert a\vert =\vert a-b+b\vert \leq\vert a-b\vert +\vert b\vert $;$\vert a-b\vert =\vert a-c+c-b\vert \leq\vert a-c\vert +\vert c-b\vert $
+  - $\frac2{(\frac1a+\frac1b)}\leq\sqrt{ab}\leq\frac{ab}2\leq\sqrt{\frac{a^2+b^2}2}$
+  - $\frac{a^2}c+\frac{b^2}d\geq\frac{(a+b)^2}{c+d}$
+  - Cauchy-Schwarz不等式: $(a_1b_1+a_2b_2)^2\leq(a_1^2+a_2^2)(b_1^2+b_2^2);\left[\int_a^bf(x)g(x){\mathrm d}x\right]^2\leq\int_a^bf^2(x){\mathrm d}x\int_a^bg^2(x){\mathrm d}x$
+  - $\vert \int_a^bf(x){\mathrm d}x\vert\leq\int_a^b\vert f(x)\vert{\mathrm d}x$
 
