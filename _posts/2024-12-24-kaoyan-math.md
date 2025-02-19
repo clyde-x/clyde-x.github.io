@@ -176,7 +176,7 @@ $\forall x_1,x_2\in I$，凹：$f\left(\frac{x_1+x_2}{2}\right)<\frac{f(x_1)+f(x
 
 - 对称性：关于点中心对称；关于直线对称；完全对称（多元函数任意两字母交换之后仍与原函数相同）；轮换对称。
 
-- 常用的不等式
+- 常用的不等式（随便看看得了）
 
   - $ \vert a\vert =\vert a-b+b\vert \leq\vert a-b\vert +\vert b\vert $;$\vert a-b\vert =\vert a-c+c-b\vert \leq\vert a-c\vert +\vert c-b\vert $
   - $\frac2{(\frac1a+\frac1b)}\leq\sqrt{ab}\leq\frac{ab}2\leq\sqrt{\frac{a^2+b^2}2}$
@@ -185,3 +185,71 @@ $\forall x_1,x_2\in I$，凹：$f\left(\frac{x_1+x_2}{2}\right)<\frac{f(x_1)+f(x
   - $\vert \int_a^bf(x){\mathrm d}x\vert\leq\int_a^b\vert f(x)\vert{\mathrm d}x$
 
 # 一元积分学
+
+## 定积分
+
+定积分存在：被积函数在**闭**区间内有有限个间断点。$\int_a^bf(x){\mathrm d}x=\lim\limits_{\lambda\to0}\sum_{i=1}^{n}f(\xi_i)\Delta x_i$
+
+用定积分求极限，先提出一个$\frac1n$，剩下的就是被积函数，把变化的部分用含$i$的式子替换，即$x=\frac in$，然后再注意积分的上下限（一般是01）。2021年数一的一道选择题就很经典，能加深对定积分和求和之间关系的理解。
+
+## 不定积分技巧
+
+### 常用积分
+
+但是不太好记的，记不住也没关系，熟悉他们的推导过程，也能举一反三。
+$$
+\begin{aligned}
+&\int\tan x{\mathrm d}x=\int\frac{\sin x}{\cos x}{\mathrm d}x=-\ln \vert\cos x\vert+C\\
+&\int\cot x{\mathrm d}x=-\ln\vert\sin \vert+C\\
+&\int\frac1{\cos x}{\mathrm d}x=\frac12\ln\frac{1+\sin x}{1-\sin x}+C=\ln\vert\tan x+\frac1{\cos x}\vert+C\\
+&\int\frac1{\sin x}{\mathrm d}x=\frac12\ln\frac{1-\cos x}{1+\cos x}+C=\ln\vert\csc x-\cot x\vert+C\\
+&\int\frac1{\cos^2x}{\mathrm d}x=\tan x+C\\
+&\int\frac1{\sin^2x}{\mathrm d}x=-\cot x+C\\
+&\int\frac1{a^2+x^2}{\mathrm d}x=\frac1a\arctan\frac xa+C\\
+&\int\frac1{a^2-x^2}{\mathrm d}x=\frac1{2a}\ln\vert\frac {a+x}{a-x}\vert+C\\
+&\int\frac1{\sqrt{a^2-x^2}}{\mathrm d}x=\arcsin \frac ax+C\\
+&\int\frac1{\sqrt{x^2-a^2}}{\mathrm d}x=\ln\vert x+\sqrt{x^2-a^2}\vert+C\\
+&\int\frac1{\sqrt{x^2+a^2}}{\mathrm d}x=\ln\vert x+\sqrt{x^2+a^2}\vert+C\\
+\end{aligned}
+$$
+
+### 常用换元
+
+三角换元：把$x$换成$t$
+
+$\sqrt{a^2-x^2},x=a\sin t;\quad\sqrt{x^2+a^2},x=a\tan t\quad\sqrt{x^2-a^2},x=a\sec t$
+
+<img src="{{site.url}}/images/kaoyanmath/sanjiaohuanyuan.jpg" alt="concavity" style="zoom:50%;" />
+
+还可以使用**万能公式**、**齐次化**等技巧对含三角函数的被积函数进行换元
+
+被积函数$R(x,(ax+b)^{\frac1n},(ax+b)^{\frac1m})$，令$(ax+b)^{\frac1{mn}}=t$
+
+被积函数含复杂根式，将整个根式令为t
+
+### 分部积分
+
+$$
+\int u{\mathrm d}v=uv-\int v{\mathrm d}u
+$$
+
+u一般是函数本身复杂，导数简单的，如$\ln x,\arctan x,\arcsin x$
+
+v一般是函数原函数和导数差不多的，如$e^x,\sin x,\cos x$
+
+对于$\int e^x\sin x{\mathrm d}x,\int e^x\cos x{\mathrm d}x$连用两次分部积分，然后解方程
+
+### 有理分式
+
+把分式化为最简，$R(x)=\frac{P(x)}{Q(x)}$，分子次数小于分母次数
+
+把有理分式分解为简单分式的和：$\frac{A}{x-a},\frac{Mx+N}{x^2+px+q},\frac{B_i}{(x-b)^i}$，可以用留数法解各个的系数
+
+### 其他的（华理士之类的）
+
+$$\int_0^{\frac\pi2}\sin^nx{\mathrm d}x=\int_0^{\frac\pi2}\cos^nx{\mathrm d}x=\begin{cases}&\frac{n-1}{n}\frac{n-3}{n-2}\cdots\frac12\frac\pi2,n为偶数\\&\frac{n-1}{n}\frac{n-3}{n-2}\cdots\frac23,n为奇数\end{cases}$$
+
+区间换到$\pi$或者$2\pi$之类的自己再推推
+
+$\int_0^\pi xf(\sin x){\mathrm d}x=\frac\pi2\int_0^\pi f(\sin x){\mathrm d}x$
+
