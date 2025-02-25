@@ -2,7 +2,7 @@
 
 title: "CLYDE site"
 description: "有时候随便写写."
-logo: # 120x120 px default image used for Twitter summary card
+logo: site_img.jpg
 teaser: teaser.jpg #400*250
 locale: en
 url:
