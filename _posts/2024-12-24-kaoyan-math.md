@@ -267,17 +267,17 @@ $f(X),g(X)$在$[a,b]$连续，且$g(x)$不变号，则$\exists \theta\in[a,b],{\
 
 ### 审敛
 
-- 无界p积分：$\int_1^{+\infin}\frac1{x^p}\mathrm dx=\frac{\infin^{1-p}-1}{1-p},p>1收敛,p\leq1发散$
+- 无界p积分：$\int_1^{+\infty}\frac1{x^p}\mathrm dx=\frac{\infty^{1-p}-1}{1-p},p>1收敛,p\leq1发散$
 
 - 瑕p积分：$\int_0^1\frac1{x^p}\mathrm dx=\frac{1-0^{1-p}}{1-p},p<1收敛,p\geq1发散$
 
 - 绝对收敛必收敛
 
-- 比较判别法的极限形式：$\lim\limits_{x\to\infin}\frac{f(x)}{\varphi(s)}=l$，$0<l<\infin$两个函数同敛散；$l=0$分子收敛则分母收敛；$l=\infin$分子发散则分母发散
+- 比较判别法的极限形式：$\lim\limits_{x\to\infty}\frac{f(x)}{\varphi(s)}=l$，$0<l<\infty$两个函数同敛散；$l=0$分子收敛则分母收敛；$l=\infty$分子发散则分母发散
 
-- Cauchy判别法：取$\varphi(x)=\frac1{x^p}$，即$\lim\limits_{x\to\infin}x^pf(x)=l$，$0\leq l<\infin,p>1$收敛；$0<l\leq \infin,p\leq1$发散
+- Cauchy判别法：取$\varphi(x)=\frac1{x^p}$，即$\lim\limits_{x\to\infty}x^pf(x)=l$，$0\leq l<\infty,p>1$收敛；$0<l\leq \infty,p\leq1$发散
 
-- 瑕积分的Cauchy判别：$\lim\limits_{x\to b}(x-b)^pf(x)=l$，$0\leq l<\infin,p<1$收敛；$0<l\leq \infin,p\geq1$发散
+- 瑕积分的Cauchy判别：$\lim\limits_{x\to b}(x-b)^pf(x)=l$，$0\leq l<\infty,p<1$收敛；$0<l\leq \infty,p\geq1$发散
 
 - 万能公式（其中瑕积分仅指$x\to0$的时候，当$x\to1$时把$\ln x$当成$x-1$，再换元）
 
