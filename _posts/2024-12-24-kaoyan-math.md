@@ -253,3 +253,48 @@ $$\int_0^{\frac\pi2}\sin^nx{\mathrm d}x=\int_0^{\frac\pi2}\cos^nx{\mathrm d}x=\b
 
 $\int_0^\pi xf(\sin x){\mathrm d}x=\frac\pi2\int_0^\pi f(\sin x){\mathrm d}x$
 
+## 积分中值定理
+
+$f(X),g(X)$在$[a,b]$连续，且$g(x)$不变号，则$\exists \theta\in[a,b],{\mathrm {s.t.}}\int_a^bf(x)g(x)\mathrm dx=f(\theta)\int_a^bg(x)\mathrm dx$
+
+以上为积分第二中值定理，当$g(x)=1$时，退化为积分第一中值定理
+
+## 反常积分
+
+无界函数的奇点与“这个点分母是否为0”没有关系，例如$\int_0^1\ln x \mathrm dx,\int_0^1\frac1{x^2}e^{-\frac1x}\mathrm dx$，$x=0$，是前者的奇点，不是后者的奇点。
+
+反常积分是否收敛，与函数极限为0，没有关系。[这篇文章](https://zhuanlan.zhihu.com/p/342471635)有具体的例子。
+
+### 审敛
+
+- 无界p积分：$\int_1^{+\infin}\frac1{x^p}\mathrm dx=\frac{\infin^{1-p}-1}{1-p},p>1收敛,p\leq1发散$
+
+- 瑕p积分：$\int_0^1\frac1{x^p}\mathrm dx=\frac{1-0^{1-p}}{1-p},p<1收敛,p\geq1发散$
+
+- 绝对收敛必收敛
+
+- 比较判别法的极限形式：$\lim\limits_{x\to\infin}\frac{f(x)}{\varphi(s)}=l$，$0<l<\infin$两个函数同敛散；$l=0$分子收敛则分母收敛；$l=\infin$分子发散则分母发散
+
+- Cauchy判别法：取$\varphi(x)=\frac1{x^p}$，即$\lim\limits_{x\to\infin}x^pf(x)=l$，$0\leq l<\infin,p>1$收敛；$0<l\leq \infin,p\leq1$发散
+
+- 瑕积分的Cauchy判别：$\lim\limits_{x\to b}(x-b)^pf(x)=l$，$0\leq l<\infin,p<1$收敛；$0<l\leq \infin,p\geq1$发散
+
+- 万能公式（其中瑕积分仅指$x\to0$的时候，当$x\to1$时把$\ln x$当成$x-1$，再换元）
+
+  $\int\frac{1}{x^\alpha\ln^\beta x}\mathrm dx$，瑕积分：$\alpha<1或\alpha=1,\beta>1$收敛；无穷积分：$\alpha>1或\alpha=1,\beta>1$收敛
+
+- 当奇偶函数单边不收敛时，不能使用对称性消掉
+
+- 超纲，Abel，Direchlet
+
+## 定积分的应用
+
+面积$S=\int_a^b[y_2(x)-y_1(x)]\mathrm dx=\frac12\int_\alpha^\beta r^2(\theta)\mathrm d\theta=\int_\alpha^\beta\vert y(t)x'(t)\vert\mathrm dt$
+
+旋转体体积$V=\pi\int_a^by^2(x)\mathrm dx$（绕x轴）
+
+弧长$s=\int_\alpha^\beta\sqrt{x'^2(t)+y'^2(t)}\mathrm dt=\int_a^b\sqrt{1+y'^2(x)}\mathrm dx=\int_\alpha^\beta\sqrt{ r^2(\theta)+r'^2(\theta)}\mathrm d\theta$
+
+旋转曲面面积$S=2\pi\int_a^b\vert y\vert\sqrt{1+f'^2(x)}\mathrm dx=2\pi\int_\alpha^\beta\vert y(t)\vert\sqrt{x'^2(t)+y'^2(t)}\mathrm dt=2\pi\int_\alpha^\beta r(\theta)\sqrt{r^2(\theta)+r'^2(\theta)}\mathrm d\theta$
+
+s
