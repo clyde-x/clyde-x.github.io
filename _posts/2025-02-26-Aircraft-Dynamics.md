@@ -91,3 +91,48 @@ $$
 
 坐标变化矩阵的变化率：
 $$ \dot L_{bi} = -(\vec{\omega}_b)_b^\times L_{bi} $$
+
+# 动力学建模方法
+
+## 动量定理
+
+$\vec p=m\vec v,\frac{\mathrm d\vec p}{\mathrm dt}=\vec F$
+
+刚体的动量定理：$\vec p=-\vec S\times\vec \omega+m\vec v_b$
+
+刚体在本体系的静矩：$\vec S=\int_b(\vec r)_b\mathrm dm$，当本体系原点位于质心时，$S=0,\vec p=m\vec v_b$
+
+## 动量矩定理
+
+动量矩不仅与质点的动量有关，也与参考点的选取有关。要明确是相对哪一个点的动量矩。
+
+<img src="{{site.url}}/images/kaoyanfushi/dljRef.png" alt="concavity" style="zoom:15%;" />
+
+若取速度为$\vec v_s$的运动点$O_s$为参考点，则质点系相对于$O_s$的动量矩：$\vec H_s=\sum\vec r_{si}\times m_i\vec v_i$
+
+对时间求导：$\frac{\mathrm d\vec H_s}{\mathrm dt}=\sum \frac{\mathrm d\vec r_{si}}{\mathrm dt}\times m_i\vec v_{i}+\vec r_{si}\times m_i\frac{\mathrm d\vec v_i}{\mathrm dt}$
+
+由矢量关系$\vec r_{si}=\vec R_i-\vec R_s$，求导，得$\frac{\mathrm d\vec r_{si}}{\mathrm dt}=\vec v_i-\vec v_s,\frac{\mathrm d\vec r_{si}}{\mathrm dt}\times m_i\vec v_{i}=-\vec v_s\times m_i\vec v_i$
+
+若记$\vec T_s=\sum \vec r_{si}\times \vec F_i$，作用于质点$p_i$的力对参考点$O_s$的力矩之和
+
+则可以得到质点系的动量矩定理：$\frac{\mathrm d\vec H_s}{\mathrm dt}=\vec T_c-\vec v_s\times\vec P$
+
+当参考点相对于惯性系静止即$\vec v_s=0$，或参考点为质心，即$\vec v_s\times\vec P=\vec v_s\times m\vec v_c=0$，简化为我们一般常见的
+$$
+\frac{\mathrm d\vec H_s}{\mathrm dt}=\vec T_s
+$$
+当受外力矩为0，则动量守恒。
+
+**刚体**相对于本体系原点$O_b$的动量矩，在本体系中的分量列阵：
+$$
+(\vec H_b)_b=(I)_b(\vec\omega)_b+(\vec S)_b^\times(\vec v_b)_b
+$$
+其中$(I)_b=\int_b[(\vec r)_b^\times]^T(\vec r)_b^\times\mathrm dm$为刚体在本体系中的**惯性矩阵**，$(\vec S)_b$为上文提到的静矩
+
+$$(I)_b=\begin{bmatrix}I_x&-I_{xy}&-I_{xz}\\-I_{xy}&I_y&-I_{yz}\\-I_{xz}&-I_{yz}&I_z\end{bmatrix}$$
+
+主对角线上为主惯量$I_x=\int_b(y^2+z^2)\mathrm dm$，其余为惯量积$I_xy=\int_b(xy)\mathrm dm$
+
+**动量矩定理**：$\frac{\mathrm d\vec H_b}{\mathrm dt}=\vec T_b+\vec v_b\times(\vec S\times\omega)$,若静矩为0，则$\frac{\mathrm d\vec H_b}{\mathrm dt}=\vec T_b=\sum\vec r_i\times \vec F_i$
+
