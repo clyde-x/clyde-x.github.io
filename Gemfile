@@ -8,3 +8,5 @@ gem "jekyll-feed"
 
 
 gem "webrick", "~> 1.8"
+
+gem "faraday-retry", "~> 2.2"

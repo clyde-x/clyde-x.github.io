@@ -5,6 +5,7 @@ tags: "考研复试"
 category: kaoyan
 excerpt_separator: <!--brief-->
 permalink: /kaoyan/aircraftDynamics
+teaser: head.jpg
 ---
 复习一下飞行器动力学建模，这是大二由贾老师和金老师教授的课程，是我们后面轨道动力学，以及进行控制的基础。要熟练掌握各种坐标系变换，动力学特征等内容。
 <!--brief-->

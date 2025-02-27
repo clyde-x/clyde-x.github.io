@@ -2,7 +2,7 @@
 
 title: "CLYDE site"
 description: "有时候随便写写."
-logo: site_img.jpg
+logo: site_img.jpg #120*120
 teaser: teaser.jpg #400*250
 locale: en
 url:
@@ -34,7 +34,7 @@ owner:
     ad-client:
     ad-slot:
   bio:
-  avatar: bio-photo.jpg # 160x160 px image for author byline
+  avatar: head.jpg # 160x160 px image for author byline
   disqus-shortname:
 
 
