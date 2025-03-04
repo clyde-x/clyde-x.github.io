@@ -241,3 +241,32 @@ $\omega=\vec{\dot \psi}+\vec{\dot \vartheta}+\vec{\dot \gamma}$，角度的处�
 
 $\frac{1}{g}\frac{dV}{dt}=n_{x2}-\sin\theta;\frac{V}{g}\frac{d\theta}{dt}=n_{y2}-\cos\theta-\frac{V}{g}\cos\theta;\frac{d\psi_{\nu}}{dt}=n_{z2}$
 
+# 姿态运动学和动力学
+
+## 单刚体航天器姿态动力学与运动学
+
+**常用坐标系以及姿态角**
+
+|      | 惯性系$S_i$                        | 第二轨道坐标系$S_o'$或$S_o$    | 本体系$S_b$  |
+| ---- | ---------------------------------- | ------------------------------ | ------------ |
+| 原点 |                                    | 质心                           | 质心         |
+| x    |                                    | 轨道平面内，垂直于z指向前      | 前，惯性主轴 |
+| y    | 垂直于轨道平面，与$\vec H$方向相反 | 垂直轨道平面与$\vec H$方向相反 | 右，惯性主轴 |
+| z    |                                    | 指向地心                       | 下，惯性主轴 |
+
+**姿态角**：航天器本体坐标系相对于第二轨道坐标系的欧拉角，用滚转角$\varphi$，俯仰角$\theta$，偏航角$\psi$,描述。
+
+第一套欧拉角321旋转，无法描述自旋卫星的姿态；第二套312旋转
+
+**运动方程**：$\omega=\omega_r+\omega_{orb}$，绝对角速度=本体系相对轨道角速度+牵连角速度（轨道系的绝对角速度）。把方程放到本体系
+
+在轨道系中，$(\omega_{orb})_o=[0,-\Omega,0]^T，\Omega$是轨道角速率。坐标变换，通过$L_{bo}$转到本体系上
+
+最后会得到$\omega$的三分量的表达式。两套欧拉角不同
+
+**动力学方程**
+
+$\frac{\mathrm d(\vec H)_b}{\mathrm dt}+(\omega)_b^\times(\vec H)_b=(\vec M)_b,\vec H=I\omega$即$(I)_b\frac{\mathrm d(\vec \omega)_b}{\mathrm dt}+(\omega)_b^\times(I)_b(\vec \omega)_b=(\vec M)_b$
+
+$(I)_b$为惯性矩阵，当本体系为惯性主轴系，惯量积为0，只有主惯性矩
+
