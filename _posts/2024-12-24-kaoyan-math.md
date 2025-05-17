@@ -297,4 +297,79 @@ $f(X),g(X)$在$[a,b]$连续，且$g(x)$不变号，则$\exists \theta\in[a,b],{\
 
 旋转曲面面积$S=2\pi\int_a^b\vert y\vert\sqrt{1+f'^2(x)}\mathrm dx=2\pi\int_\alpha^\beta\vert y(t)\vert\sqrt{x'^2(t)+y'^2(t)}\mathrm dt=2\pi\int_\alpha^\beta r(\theta)\sqrt{r^2(\theta)+r'^2(\theta)}\mathrm d\theta$
 
-s
+## 区间再现
+
+定积分上下限不变的换元，多用于三角函数参杂在指对幂函数中，且区间含有$\pi$（没啥用）
+$$
+\int_a^bf(x)dx=\int_a^bf(a+b-x)dx,令u=a+b-x\\
+\int_a^bf(x)dx=\frac12\int_a^bf(x)+f(a+b-x)dx,被积函数满足f(x)+f(a+b-x)简单
+$$
+
+## 用留数分解分式 
+
+在复变函数、自动控制中比较常用，对于复杂分式的分解
+$$
+\frac{P(x)}{Q(x)}=\frac{C_1}{(x-z)^n}+\frac{C_2}{(x-z)^{n-1}}+\cdots\\
+C_k=\lim_{x\to z}\frac1{(k-1)!}\frac{d^{k-1}}{dx^{k-1}}[\frac PQ(x-z)^n]
+$$
+例如$\dfrac{x^3+2x^2+1}{x^4+6x^3+14x^2+8}$
+$$
+f(x)=\frac A{(x+2)^2}+\frac B{x+2}+\frac{ax+b}{x^2+2x+2}\\
+A=\lim_{x\to2}\frac{x^3+2x^2+1}{x^2+2x+2}=\frac12,B=\lim_{x\to2}[\frac{x^3+2x^2+1}{x^2+2x+2}]'=\frac52,ab可以待定系数
+$$
+
+# 多元函数微分学
+
+## 概念
+
+重极限：邻域中的点无论以任何方式趋近$P_0(x_0,y_0)$时，函数都趋近于同一常数A
+
+偏导：$f_x'(x_0,y_0)=\frac{\partial f(x,y)}{\partial x}|_{(x_0,y_0)}=\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}$实际上是一元函数的导数。几何上表示曲面与平面$y=y_0$的交线在$x_0$处的斜率
+
+全增量：$\Delta z = f(x+\Delta x,y+\Delta y)-f(x,y)=A\Delta x+B\Delta y+o(\sqrt{(\Delta x)^2+(\Delta y)^2})$则$dz=A\Delta x+B\Delta$为全微分
+
+可微$\to$连续，偏导存在，且$dz=\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy$
+
+偏导连续$\to$可微，
+
+可导：两个偏导数都存在。可导既不可以推连续（由重极限定义），也不可以推可微
+
+方向导数：l为$(x_0,y_0)$出发射线，$(x,y)$为射线上一点，$\rho$为两点间距离，则
+$$
+\frac{\partial f}{\partial l}|_{(x_0,y_0)}=\lim_{\rho\to0^+}\frac{f(x,y)-f(x_0,y_0)}{\rho}=\frac{\partial f}{\partial x}\cos\theta+\frac{\partial f}{\partial y}\sin\theta
+=\nabla f\cdot\vec{e}
+$$
+在所有方向导数中，沿着$\nabla$的最大，为$\nabla$的模长。
+
+判断可微：求在点处的两个偏导（用定义，极限求）；判断师是否趋于0，
+$$
+\lim_{\Delta x,\Delta y\to0}\frac{f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)-\frac{\partial f}{\partial x}\Delta x-\frac{\partial f}{\partial y}\Delta y}{\sqrt{(\Delta x)^2+(\Delta y)^2}}=0
+$$
+若函数的混合二阶偏导数连续，则相等
+
+隐函数：$\dfrac{\partial y}{\partial x}=-\dfrac{F_x}{F_y}$，$F(x,y)=0$，$F_x,F_y$分别为$x,y$的偏导数，$\dfrac{\partial z}{\partial x}=-\dfrac{F_x}{F_z},\dfrac{\partial z}{\partial y}=-\dfrac{F_y}{F_z}$
+
+由方程组$F(x,u,v)=0,G(x,u,v)=0$，则$F_x'+F_u'\frac{\partial u}{\partial x}+F_v'\frac{\partial v}{\partial x}=0$，$G_x'+G_u'\frac{\partial u}{\partial x}+G_v'\frac{\partial v}{\partial x}=0$，联立方程组求解$\frac{\partial u}{\partial x},\frac{\partial v}{\partial x}$
+
+## 多元极值
+
+充分条件：$f_x'=0,f_y'=0$，$f_{xx}''=A,f_{yy}''=B'',f_{xy}''=f_{yx}''=C$，则$AC-B^2>0$，取极值，$A>0$极小值，$A<0$极大值；$AC-B^2=0$不确定；$AC-B^2<0$不取极值。
+
+步骤：求驻点（包含偏导不存在的点），求ABC判别。
+
+条件极值：Lagrange乘数法，$f(x,y)$在条件$\phi(x,y)=0$下的极值：$F(x,y,\lambda)=f(x,y)+\lambda\phi(x,y)$，求偏导数，$F_x'=0,F_y'=0,F_\lambda'=0$，求解方程组
+$\lambda$为拉格朗日乘数，$\lambda=\frac{\partial f}{\partial \phi}$，$\lambda$的几何意义是切平面与约束曲面的法向量的夹角
+
+均值不等式：调和，几何，算数，平方$\dfrac{n}{\dfrac1x_1+\frac1x_2+\cdots+\dfrac1{x_n}}\leq \sqrt[n]{x_1x_2\cdots x_n}\leq\dfrac{x_1+x_2+\cdots+x_n}{n}\leq\sqrt{\dfrac{x_1^2+x_2^2+\cdots+x_n^2}n}$
+
+多元泰勒：
+$$
+f(\vec x)=f(\vec x_0)+\nabla f(\vec x_0)^T\cdot(\vec x-\vec x_0)+\frac1{2!}(\vec x-\vec x_0)^T\nabla^2 f(\vec x_0)(\vec x-\vec x_0)+o(\|\vec x-\vec x_0\|^2)
+$$
+
+二元泰勒：
+$$
+f(x,y)=f(x_0,y_0)+\frac{\partial f}{\partial x}(x-x_0)+\frac{\partial f}{\partial y}(y-y_0)+\frac{1}{2!}\left[\frac{\partial^2 f}{\partial x^2}(x-x_0)^2+2\frac{\partial^2 f}{\partial x \partial y}(x-x_0)(y-y_0)+\frac{\partial^2 f}{\partial y^2}(y-y_0)^2\right]+o(\Delta x^2+\Delta y^2)\\   =
+f(x_0,y_0)+[f_x'(x_0,y_0),f_y'(x_0,y_0)]\begin{bmatrix}x-x_0\\ y-y_o\end{bmatrix}+\frac12\begin{bmatrix}x-x_0&y-y_0\end{bmatrix}\begin{bmatrix}f_{xx}''&f_{xy}''\\ f_{yx}''&f_{yy}''\end{bmatrix}\begin{bmatrix}x-x_0\\ y-y_o\end{bmatrix}+o(\Delta x^2+\Delta y^2)
+$$
+
